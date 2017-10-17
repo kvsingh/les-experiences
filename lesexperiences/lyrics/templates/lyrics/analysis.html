@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +11,16 @@ This view! {{ artist }}
 
 Using the following songs:
 
+{% comment %}
 {% for song in songs %}
 {{ song }}
 {% endfor %}
+{% endcomment %}
 <br/>
 
-{{ lyrics }}
+<!--{{ lyrics }}-->
 
-<img src="{% url 'lyrics:wordcloud' %}"></img>
+<img src="{{MEDIA_URL}}/wordclouds/eminem.png"></img>
 
 </body>
 </html>
